@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,19 +33,126 @@
 </head>
 
 <body background="nature.jpg">
-  <div id="wrap">
+  <style>
+    :root {
+	--color-default: #fafafa;
+	--color-primary: #277fa7;
+	--color-secondary: #161718;
+    }
+    ul li{
+  list-style: none;
+  }
+  ul li a{
+    color: #fff;
+    font-weight: 500;
+    padding: 5px 0;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+  }
+  .logo{
+    float: right;
+  }
+  .banner{
+  background-color: #4c4645;
+    width: 50%;
+    box-shadow: #6b522a;
+    border-radius: 2%;
+}
+
+  .slide{
+    height: 90%;
+    width: 180px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    transition: 0.5s ease;
+    transform: translateX(-180px);
+  }
+  input{
+    display: none;
+    visibility: hidden;
+    -webkit-appearance: none;
+  }
+  .toggle{
+    position: absolute;
+    height: 28px;
+    width: 35px;
+    top: 20px;
+    left: 10px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: var(--color-primary);
+    box-shadow: 0 0 10px #fff;
+  }
+  .toggle .common{
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: rgb(30, 39, 39);
+    border-radius: 50px;
+    transition: 0.3s ease;
+  }
+  .toggle .top_line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .toggle .middle_line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .toggle .bottom_line{
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  input:checked ~ .toggle .top_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+  }
+  input:checked ~ .toggle .bottom_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+  }
+  input:checked ~ .toggle .middle_line{
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  input:checked ~ .slide{
+  transform: translateX(0);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+    </style>
     <nav>
-      <div class="logo">
-        <img src="logo2.jpg" style="width: 50px;">
-      </div>
-      <ul class="nav-menu">
-        <li class="nav-item active"><a href="index.html">Home</a></li>
-        <li class="nav-item"><a href="about.html">About me</a></li>
-        <li class="nav-item"><a href="project.html">Projects</a></li>
-        <li class="nav-item"><a href="services.html">Services</a></li>
-        <li class="nav-item"><a href="skill.html">Skills</a></li>
-      </ul>
-    </nav>
+      <label>
+        <input type="checkbox">
+        <div class="toggle">
+            <span class="top_line common"></span>
+            <span class="middle_line common"></span>
+            <span class="bottom_line common"></span>
+        </div>
+        <div class="slide">
+          <h1> </h1>
+          <ul class="nav-menu">
+            <br><br><br>
+            <li class="nav-item active"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="about.html">About me</a></li>
+            <li class="nav-item"><a href="project.html">Projects</a></li>
+            <li class="nav-item"><a href="services.html">Services</a></li>
+            <li class="nav-item"><a href="skill.html">Skills</a></li>
+          </ul>
+        </div>
+    </label>
+  </nav>
+
+      
   </div>
   </div>
   <div class="overlay-itro"></div>
@@ -61,9 +167,9 @@
             <center>
               <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
-                  <h2>I'm, <span>Aminu Abdullahi</span> </h2>
-                  <p style="font-size: 28px; color: darkslategrey;">Designer, Developer, System Analyst.</p>
-                  <a href="contact.html" class="btn-get-started">I Need a Website <i
+                  <h2> Hi. <br>I am <span>Aminu.</span> </h2>
+                  <p style="font-size: 28px; color: darkslategrey;">Front-end developer</p>
+                  <a href="contact.html" style="text-decoration: none; font-weight: 6001; border-radius: 1%;"  class="btn-get-started">Contact me <i
                       class="bi bi-chevron-right"></i></a>
                 </div>
               </div>
